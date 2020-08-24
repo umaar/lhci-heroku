@@ -1,4 +1,6 @@
-import {createServer} from '@lhci/server';
+import lhci from '@lhci/server';
+
+const {createServer} = lhci;
 
 async function start() {
 	console.log('Starting the lhci server');
