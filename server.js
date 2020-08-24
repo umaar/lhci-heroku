@@ -1,12 +1,23 @@
-const {createServer} = require('@lhci/server');
+import {createServer} from '@lhci/server';
 
-console.log('Starting server...');
-createServer({
-  port: process.env.PORT,
-  storage: {
-    storageMethod: 'sql',
-    sqlDialect: 'postgres',
-    sqlConnectionSsl: true,
-    sqlConnectionUrl: process.env.DATABASE_URL,
-  },
-}).then(({port}) => console.log('Listening on port', port));
+async function start() {
+	console.log('Starting the lhci server');
+
+	try {
+		const {port} = await createServer({
+			port: process.env.PORT,
+			storage: {
+				storageMethod: 'sql',
+				sqlDialect: 'postgres',
+				sqlConnectionSsl: true,
+				sqlConnectionUrl: process.env.DATABASE_URL,
+			},
+		});
+
+		console.log('lhci server started on port: ', port)
+	} catch (err) {
+		throw err;
+	}
+}
+
+start();
