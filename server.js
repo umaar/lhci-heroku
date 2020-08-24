@@ -12,13 +12,13 @@ async function start() {
 				storageMethod: 'sql',
 				sqlDialect: 'postgres',
 				sqlConnectionSsl: true,
-				sqlConnectionUrl: process.env.DATABASE_URL,
-			},
+				sqlConnectionUrl: process.env.DATABASE_URL
+			}
 		});
 
-		console.log('lhci server started on port: ', port)
-	} catch (err) {
-		throw err;
+		console.log('lhci server started on port:', port);
+	} catch (error) {
+		throw error;
 	}
 }
 
