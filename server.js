@@ -12,9 +12,11 @@ async function start() {
 				storageMethod: 'sql',
 				sqlDialect: 'postgres',
 				sqlConnectionSsl: true,
-				sqlDialectOptions: {ssl: true},
-				sqlConnectionUrl: process.env.DATABASE_URL,
-				ssl: { rejectUnauthorized: false }
+				sqlDialectOptions: {ssl: {
+					require: true,
+					rejectUnauthorized: false
+				}},
+				sqlConnectionUrl: process.env.DATABASE_URL
 			}
 		});
 
