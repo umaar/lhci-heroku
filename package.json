@@ -4,17 +4,16 @@
   "main": "server.js",
   "type": "module",
   "dependencies": {
-    "@lhci/cli": "^0.5.0",
-    "@lhci/server": "^0.5.0",
-    "pg": "^7.12.1",
+    "@lhci/server": "^0.7.1",
+    "pg": "^8.6.0",
     "pg-hstore": "^2.3.3"
   },
   "xo": {
     "extends": "./node_modules/@umaar/personal-eslint-config/rules.json"
   },
   "devDependencies": {
-    "@umaar/personal-eslint-config": "^1.0.3",
-    "xo": "^0.33.0"
+    "@umaar/personal-eslint-config": "^1.0.5",
+    "xo": "^0.38.2"
   },
   "scripts": {
     "test": "./node_modules/.bin/xo"
